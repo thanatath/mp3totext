@@ -1,9 +1,13 @@
 # Import necessary libraries 
 from pydub import AudioSegment 
-  
+from pathlib import Path
+from inputfile import FILE_INPUT, FILE_LOCATION, FILE_DIR, audio_wav
+print("File directory : ",FILE_DIR)
 # Input audio file to be sliced 
-audio = AudioSegment.from_wav("/full/path/filename.wav") 
 
+
+audio = AudioSegment.from_wav(audio_wav)
+ 
 # Length of the audiofile in milliseconds 
 n = len(audio) 
   
@@ -44,10 +48,10 @@ for i in range(0, n, interval):
     chunk = audio[start:end] 
   
     # Filename / Path to store the sliced audio 
-    filename = '/full/path/chunk'+str(counter)+'.wav'
-  
+    filename = Path(FILE_DIR+"/tmp/chunk"+str(counter)+".wav")
+    print("File name: ",filename)
     # Store the sliced audio file to the defined path 
-    chunk.export(filename, format ="wav") 
+    chunk.export(str(filename), format ="wav") 
     # Print information about the current chunk 
     print("Processing chunk "+str(counter)+". Start = "
                         +str(start)+" end = "+str(end)) 

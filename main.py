@@ -1,12 +1,13 @@
+import os
+from inputfile import FILE_INPUT, FILE_LOCATION, FILE_DIR, audio_wav
+#import mp3towav
 import split_file
-import mp3towav
 from split_file import *
 import speech_recognition as sr
-import os
 
 
 for x in range(1,counter):
-    AUDIO_FILE = ("/full/path/filename/chunk%d.wav" % (x,)) 
+    AUDIO_FILE = (FILE_DIR+"/tmp/chunk%d.wav" % (x,)) 
     
     # use the audio file as the audio source 
     
@@ -16,9 +17,9 @@ for x in range(1,counter):
         #reads the audio file. Here we use record instead of 
         #listen 
         audio = r.record(source)   
-    result = r.recognize_google(audio)
+    result = r.recognize_google(audio,language='th')
     try:
-        with open("outputs.txt","a") as f:
+        with open(FILE_DIR+"/outputs.txt","a",encoding="utf-8") as f:
             f.write(result+ '\n') 
         print("%d. audio file is done." % (x,)) 
     
@@ -30,8 +31,8 @@ for x in range(1,counter):
 
 
 for i in range(1,counter):
-    if os.path.exists("/full/path/chunk%d.wav" % (i,)):
-        os.remove("/full/path/chunk%d.wav" % (i,))
+    if os.path.exists(FILE_DIR,"/chunk%d.wav" % (i,)):
+        os.remove(FILE_DIR,"/chunk%d.wav" % (i,))
     else:
         print("The file does not exist")
 print("Files are deleted.")
