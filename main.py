@@ -31,8 +31,8 @@ for x in range(1,counter):
 
 
 for i in range(1,counter):
-    if os.path.exists(FILE_DIR,"/tmp/chunk%d.wav" % (i,)):
-        os.remove(FILE_DIR,"/tmp/chunk%d.wav" % (i,))
+    if os.path.exists(FILE_DIR+"/tmp/chunk%d.wav" % (i,)):
+        os.remove(FILE_DIR+"/tmp/chunk%d.wav" % (i,))
     else:
         print("The file does not exist")
 print("Files are deleted.")
