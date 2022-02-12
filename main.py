@@ -17,7 +17,14 @@ for x in range(1,counter):
         #reads the audio file. Here we use record instead of 
         #listen 
         audio = r.record(source)   
-    result = r.recognize_google(audio,language='th')
+    
+    
+    try:
+        result = r.recognize_google(audio,language='th_TH')
+    except sr.UnknownValueError:
+        print("Error in Chunk File. continue other chunk !")
+        continue
+    
     try:
         with open(FILE_DIR+"/"+FILE_INPUT.split('.wav')[0]+".txt","a",encoding="utf-8") as f:
             f.write(result+ '\n') 
