@@ -21,7 +21,7 @@ for x in range(1,counter):
     try:
         with open(FILE_DIR+"/outputs.txt","a",encoding="utf-8") as f:
             f.write(result+ '\n') 
-        print("%d. audio file is done." % (x,)) 
+        print("%d. audio file is done from %d" % (x,counter)) 
     
     except sr.UnknownValueError: 
         print("Google Speech Recognition could not understand audio") 
