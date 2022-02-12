@@ -12,9 +12,15 @@ $ sudo pip3 install pydub
 ```
 ## Usage
 
+edit inputfile.py to your wav file name (if you have mp3.you need to convert it before)
+
 ```python
 python3 ./main.py
 ```
+
+<img src="Screenshot.jpg">
+
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
