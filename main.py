@@ -19,7 +19,7 @@ for x in range(1,counter):
         audio = r.record(source)   
     result = r.recognize_google(audio,language='th')
     try:
-        with open(FILE_DIR+"/outputs.txt","a",encoding="utf-8") as f:
+        with open(FILE_DIR+"/"+FILE_INPUT.split('.wav')[0]+".txt","a",encoding="utf-8") as f:
             f.write(result+ '\n') 
         print("%d. audio file is done from %d" % (x,counter)) 
     
@@ -31,8 +31,8 @@ for x in range(1,counter):
 
 
 for i in range(1,counter):
-    if os.path.exists(FILE_DIR,"/chunk%d.wav" % (i,)):
-        os.remove(FILE_DIR,"/chunk%d.wav" % (i,))
+    if os.path.exists(FILE_DIR,"/tmp/chunk%d.wav" % (i,)):
+        os.remove(FILE_DIR,"/tmp/chunk%d.wav" % (i,))
     else:
         print("The file does not exist")
 print("Files are deleted.")
