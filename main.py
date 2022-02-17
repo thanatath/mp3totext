@@ -26,7 +26,7 @@ for x in range(1,counter):
         continue
     
     try:
-        with open(FILE_INPUT.split('.wav')[0]+".txt","a",encoding="utf-8") as f:
+        with open(FILE_INPUT.split('.')[0]+".txt","a",encoding="utf-8") as f:
             f.write(result+ '\n') 
         print("%d. audio file is done from %d" % (x,counter)) 
     
