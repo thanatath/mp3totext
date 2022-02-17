@@ -44,3 +44,6 @@ for i in range(1,counter):
         print("The file does not exist")
 print("Files are deleted.")
 print("Process completed.")
+
+#pause programe
+input()
