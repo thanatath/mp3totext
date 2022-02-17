@@ -4,3 +4,6 @@ tmp
 *.txt
 outputs.txt
 main.spec
+build
+dist
+main.spec
