@@ -2,6 +2,7 @@
 from pydub import AudioSegment 
 from pathlib import Path
 from inputfile import FILE_INPUT, FILE_LOCATION, FILE_DIR, audio_wav
+import os
 print("File directory : ",FILE_DIR)
 # Input audio file to be sliced 
 
@@ -46,6 +47,18 @@ for i in range(0, n, interval):
         flag = 1
 
     chunk = audio[start:end] 
+    
+    
+    path = FILE_DIR+"/tmp"
+
+    # Check whether the specified path exists or not
+    isExist = os.path.exists(path)
+
+    if not isExist:
+    
+        # Create a new directory because it does not exist 
+        os.makedirs(path)
+        print("The tmp directory is created!")
   
     # Filename / Path to store the sliced audio 
     filename = Path(FILE_DIR+"/tmp/chunk"+str(counter)+".wav")

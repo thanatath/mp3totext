@@ -3,3 +3,4 @@ tmp
 *.wav
 *.txt
 outputs.txt
+main.spec
