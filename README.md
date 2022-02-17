@@ -14,8 +14,11 @@ $ sudo pip3 install pydub
 
 edit inputfile.py to your wav file name (if you have mp3.you need to convert it before)
 
-```python
-python3 ./main.py
+```
+1. run exe file
+  - 1.2 py main.py (optional)
+3. type your wav file (ex. input.wav)
+4. wait...
 ```
 
 <img src="Screenshot.jpg">
